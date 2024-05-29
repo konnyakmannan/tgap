@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tgap"
+version = "2024.5.0"
+description = "A command-line tool for performing various time-related calculations."
+authors = [
+    { name="Taiki Kanda", email="taiki@konnyak.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = [
+	"calculator",
+	"datetime",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+urls."Source" = "https://github.com/konnyakmannan/tgap.git"
+
+scripts.tgap = "tgap.__main__:run"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+

@@ -1,6 +1,6 @@
 from typing import Sequence
 
-import cli
+from tgap import cli
 
 def run(args: Sequence[str] | None = None) -> int:
     parser = cli.build_parser()
