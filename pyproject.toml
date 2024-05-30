@@ -27,6 +27,9 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
 ]
+optional-dependencies.test = [
+  "pytest>=8.2",
+]
 
 urls."Source" = "https://github.com/konnyakmannan/tgap.git"
 
@@ -71,3 +74,8 @@ quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
+
+[tool.pytest]
+ini_options.testpaths = [
+  "tests",
+]
