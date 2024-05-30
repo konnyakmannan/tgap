@@ -41,7 +41,7 @@ def build_parser() -> ArgumentParser:
 
     return parser
 
-def calculate_diff(configs: Configs) -> str:
+def calculate_diff(configs: Configs) -> timedelta:
     end = parse_time(configs.end, configs.format)
     if configs.start:
         start = parse_time(configs.start, configs.format)
@@ -50,17 +50,17 @@ def calculate_diff(configs: Configs) -> str:
     result = abs(end - start)
     return result
 
-def add_duration(configs: Configs) -> str:
+def add_duration(configs: Configs) -> datetime:
     base_time, delta = convert_configs(configs)
     result = base_time + delta
     return result
 
-def subtract_duration(configs: Configs) -> str:
+def subtract_duration(configs: Configs) -> datetime:
     base_time, delta = convert_configs(configs)
     result = base_time - delta
     return result
 
-def convert_configs(configs: Configs) -> (datetime, timedelta):
+def convert_configs(configs: Configs) -> tuple[datetime, timedelta]:
     delta = parse_duration(configs.duration)
     if configs.time:
         base_time = parse_time(configs.time, configs.format)
