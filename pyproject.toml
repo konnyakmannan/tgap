@@ -1,25 +1,31 @@
 [build-system]
-requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
+
+requires = [
+  "setuptools>=61",
+]
 
 [project]
 name = "tgap"
 version = "2024.5.0"
 description = "A command-line tool for performing various time-related calculations."
-authors = [
-    { name="Taiki Kanda", email="taiki@konnyak.com" }
+readme = "README.md"
+keywords = [
+  "calculator",
+  "datetime",
 ]
 license = { text = "MIT" }
-readme = "README.md"
-requires-python = ">=3.10"
-keywords = [
-	"calculator",
-	"datetime",
+authors = [
+  { name = "Taiki Kanda", email = "taiki@konnyak.com" },
 ]
+requires-python = ">=3.10"
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
 ]
 
 urls."Source" = "https://github.com/konnyakmannan/tgap.git"
@@ -27,10 +33,12 @@ urls."Source" = "https://github.com/konnyakmannan/tgap.git"
 scripts.tgap = "tgap.__main__:run"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = [
+  "src",
+]
 
 [tool.ruff]
 line-length = 120
@@ -38,10 +46,19 @@ indent-width = 4
 target-version = "py310"
 
 [tool.ruff.lint]
-select = ["E", "F", "W", "B", "I"]
-ignore = []
+select = [
+  "E",
+  "F",
+  "W",
+  "B",
+  "I",
+]
+ignore = [
+]
 
-fixable = ["ALL"]
+fixable = [
+  "ALL",
+]
 
 [tool.ruff.lint.mccabe]
 max-complexity = 5
@@ -54,5 +71,3 @@ quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
-
-
