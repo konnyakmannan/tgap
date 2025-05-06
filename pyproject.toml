@@ -27,13 +27,15 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
 ]
-optional-dependencies.test = [
-  "pytest>=8.2",
-]
 
 urls."Source" = "https://github.com/konnyakmannan/tgap.git"
 
 scripts.tgap = "tgap.__main__:run"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]
 
 [tool.setuptools]
 package-dir = { "" = "src" }
